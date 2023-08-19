@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - A function that produces output according to a format.
+ * _printf - A function that produces output according to a format.
  * Return: The number of characters printed.
  */
 
