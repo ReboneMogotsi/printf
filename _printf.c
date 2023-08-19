@@ -5,7 +5,7 @@
  * Return: The number of characters printed.
  */
 
-int main(void)
+int _printf(const char *format, ...)
 {
 	int age = 30;
 	char alphabet = 'R';
