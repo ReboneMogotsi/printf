@@ -1,5 +1,5 @@
-#ifndef PRINTF_H
-#define PRINTF_H
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdarg.h>
 #include <stdlib.h>
 
@@ -8,7 +8,7 @@
  * @arg: argument
  * @print_function: function for each character arg
  *
- * Description: Maps specifier in argument with corresponding
+ *Description: Maps specifier in argument with corresponding
  *print functions
  */
 typedef struct sp

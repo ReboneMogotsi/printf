@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "main.h"
 #include <stdarg.h>
 
 /**
@@ -20,6 +20,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == '%')
+				count += _putchar(format[i]);
+
 			func = get_function(&format[i]);
 			if (func)
 				count += func(args);

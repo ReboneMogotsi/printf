@@ -1,4 +1,4 @@
-#include "print.h"
+#include "main.h"
 
 /**
  * get_function - pointer to print functions

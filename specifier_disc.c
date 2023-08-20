@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "main.h"
 
 /**
  * print_char - print character
@@ -64,17 +64,22 @@ int count_digits(int num)
  */
 int print_dec(va_list args)
 {
-	int digit_count, i;
+	int i, digit_count = 0;
 	char digit[10];
 	int num = va_arg(args, int);
 
+	if (num < 0)
+	{
+		_putchar('-');
+		num = -num;
+	}
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
 
-	digit_count = count_digits(num);
+	digit_count += count_digits(num);
 	for (i = (digit_count - 1); i >= 0; i--)
 	{
 		digit[i] = (num % 10) + '0';
@@ -94,9 +99,15 @@ int print_dec(va_list args)
  */
 int print_int(va_list args)
 {
-	int digit_count, i;
+	int i, digit_count = 0;
 	char digit[10];
 	int num = va_arg(args, int);
+
+	if (num < 0)
+	{
+		_putchar('-');
+		num = -num;
+	}
 
 	if (num == 0)
 	{
@@ -104,7 +115,7 @@ int print_int(va_list args)
 		return (1);
 	}
 
-	digit_count = count_digits(num);
+	digit_count += count_digits(num);
 	for (i = (digit_count - 1); i >= 0; i--)
 	{
 		digit[i] = (num % 10) + '0';
