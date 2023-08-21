@@ -13,11 +13,11 @@
  */
 typedef struct sp
 {
-	char *arg;
+	char arg;
 	int (*print_function)(va_list);
 } spec;
 
-int (*get_function(const char *specifier))(va_list);
+int (*get_function(char specifier))(va_list);
 int count_digits(int num);
 int _putchar(char c);
 int _printf(const char *format, ...);

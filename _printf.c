@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			if (format[i] == '%')
 				count += _putchar(format[i]);
 
-			func = get_function(&format[i]);
+			func = get_function(format[i]);
 			if (func)
 				count += func(args);
 		}
