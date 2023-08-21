@@ -22,7 +22,7 @@ int count_digits(int num);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list);
-int print_dec(va_list);
 int print_int(va_list);
 int print_string(va_list);
+int print_bin(va_list);
 #endif

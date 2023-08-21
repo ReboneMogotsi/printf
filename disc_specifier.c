@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * print_char - print character
@@ -10,8 +11,7 @@ int print_char(va_list args)
 {
 	char ch = va_arg(args, int);
 
-	_putchar(ch);
-	return (1);
+	return (_putchar(ch));
 }
 
 /**
@@ -25,6 +25,9 @@ int print_string(va_list args)
 	int i, count = 0;
 
 	char *str = va_arg(args, char *);
+
+	if (!str)
+		str = "(null)";
 
 	i = 0;
 	while (str && str[i])
@@ -54,41 +57,6 @@ int count_digits(int num)
 		num /= 10;
 	}
 	return (count);
-}
-
-/**
- * print_dec - print decimal number
- * @args: unknown arguments
- *
- * Return: digit_count (number character printed)
- */
-int print_dec(va_list args)
-{
-	int i, digit_count = 0;
-	char digit[10];
-	int num = va_arg(args, int);
-
-	if (num < 0)
-	{
-		_putchar('-');
-		num = -num;
-	}
-	if (num == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
-
-	digit_count += count_digits(num);
-	for (i = (digit_count - 1); i >= 0; i--)
-	{
-		digit[i] = (num % 10) + '0';
-		num /= 10;
-	}
-	for (i = 0; i < digit_count; i++)
-		_putchar(digit[i]);
-
-	return (digit_count);
 }
 
 /**

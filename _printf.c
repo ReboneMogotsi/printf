@@ -9,9 +9,13 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i, count = 0;
+	unsigned int i;
+	int count = 0;
 	va_list args;
 	int (*func)(va_list args);
+
+	if (!format)
+		return (-1);
 
 	va_start(args, format);
 	i = 0;
@@ -20,6 +24,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (!format[i])
+				return (-1);
+
 			if (format[i] == '%')
 				count += _putchar(format[i]);
 

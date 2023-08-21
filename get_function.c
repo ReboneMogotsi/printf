@@ -11,10 +11,11 @@ int (*get_function(char specifier))(va_list)
 	unsigned int i;
 
 	spec chts[] = {
-		{'d', print_dec},
+		{'d', print_int},
 		{'c', print_char},
 		{'i', print_int},
 		{'s', print_string},
+		{'b', print_bin},
 		{0, NULL}
 	};
 
