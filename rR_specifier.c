@@ -75,9 +75,6 @@ int print_rot13(va_list args)
 	int i, count = 0;
 	char *str = va_arg(args, char *);
 
-	if (!str)
-		str = "(null)";
-
 	i = 0;
 	while (str && str[i])
 	{
