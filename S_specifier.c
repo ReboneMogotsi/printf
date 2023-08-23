@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_nonprint - print str of non printable char
  * @args: va_list to get the str
