@@ -11,9 +11,12 @@ int print_pointer(va_list args)
 	void *ptr = va_arg(args, void *);
 	int count = 0;
 
-	_putchar('0');
-	_putchar('x');
-	count += 2;
+	if (!ptr)
+		return (_printf("(nil)"));
+
+	count = _printf("0x");
+	if (count < 0)
+		return (-1);
 
 	count += print_hex(ptr, 0);
 
