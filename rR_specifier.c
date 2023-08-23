@@ -46,40 +46,28 @@ int print_rev(va_list args)
 }
 
 /**
- * rot13 - get rot13 equivalent of character
- * @ch: char param
+ * print_rot13 - print a string encoded in rot13
+ * @args: the va_list with the string to print as the next element
  *
- * Return rot13 of character
- */
-char rot13(char ch)
-{
-	char rotit, base;
-
-	if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
-	{
-		base = (ch >= 'A' && ch <= 'Z') ? 'A' : 'a';
-		rotit = (ch - base + 13) % 26 + base;
-		return (rotit);
-	}
-	return (ch);
-}
-
-/**
- * print_rot13 - print rot13 of string
- * @args: character arg of va_list
- *
- * Return: number of chars printed
+ * Return: the number of bytes printed
  */
 int print_rot13(va_list args)
 {
-	int i, count = 0;
+	int count = 0, i;
 	char *str = va_arg(args, char *);
 
-	i = 0;
-	while (str && str[i])
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(rot13(str[i]));
-		count++;
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+		{
+			if ((str[i] >= 'n' && str[i] <= 'z') ||
+			    (str[i] >= 'N' && str[i] <= 'Z'))
+				count += _putchar(str[i] - 13);
+			else
+				count += _putchar(str[i] + 13);
+		}
+		else
+			count += _putchar(str[i]);
 	}
 	return (count);
 }
