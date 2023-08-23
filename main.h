@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdarg.h>
 #include <stdlib.h>
+#include <limits.h>
 
 /**
  * struct sp - character specifier
@@ -19,10 +20,22 @@ typedef struct sp
 
 int (*get_function(char specifier))(va_list);
 int count_digits(int num);
+char rot113(char ch);
+int _strlen(char *str);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list);
 int print_int(va_list);
 int print_string(va_list);
 int print_bin(va_list);
+int print_uint(va_list);
+int print_oct(va_list);
+int count_digits_octal(unsigned int num);
+int count_digits_hex(unsigned int num);
+int print_hex(va_list args, int uppercase);
+int print_lowhex(va_list);
+int print_uphex(va_list);
+int print_rev(va_list);
+int print_rot13(va_list);
+
 #endif

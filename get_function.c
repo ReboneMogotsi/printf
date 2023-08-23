@@ -16,6 +16,12 @@ int (*get_function(char specifier))(va_list)
 		{'i', print_int},
 		{'s', print_string},
 		{'b', print_bin},
+		{'u', print_uint},
+		{'o', print_oct},
+		{'x', print_lowhex},
+		{'X', print_uphex},
+		{'r', print_rev},
+		{'R', print_rot13},
 		{0, NULL}
 	};
 

@@ -11,6 +11,9 @@ int print_char(va_list args)
 {
 	char ch = va_arg(args, int);
 
+	if(!ch)
+		return (-1);
+
 	return (_putchar(ch));
 }
 
@@ -67,12 +70,30 @@ int count_digits(int num)
  */
 int print_int(va_list args)
 {
+	char *digit;
 	int i, digit_count = 0;
-	char digit[10];
 	int num = va_arg(args, int);
 
-	if (num < 0)
+	digit_count += count_digits(num);
+	digit = malloc((num < 0 ? digit_count + 1 : digit_count) * sizeof(char));
+
+	if (!digit)
+		return (-1);
+
+	if (num < INT_MIN || num > INT_MAX)
 	{
+		_putchar('I');
+		_putchar('n');
+		_putchar('v');
+		_putchar('a');
+		_putchar('l');
+		_putchar('i');
+		_putchar('d');
+		free(digit);
+		return (-1);
+	}
+
+	if (num < 0) {
 		_putchar('-');
 		num = -num;
 	}
@@ -80,10 +101,9 @@ int print_int(va_list args)
 	if (num == 0)
 	{
 		_putchar('0');
+		free(digit);
 		return (1);
 	}
-
-	digit_count += count_digits(num);
 	for (i = (digit_count - 1); i >= 0; i--)
 	{
 		digit[i] = (num % 10) + '0';
@@ -92,5 +112,6 @@ int print_int(va_list args)
 	for (i = 0; i < digit_count; i++)
 		_putchar(digit[i]);
 
+	free(digit);
 	return (digit_count);
 }
