@@ -35,6 +35,7 @@ int count_digits_hex(unsigned int num);
 int print_hex(va_list args, int uppercase);
 int print_lowhex(va_list);
 int print_uphex(va_list);
+int print_pointer(va_list args);
 int print_rev(va_list);
 int print_rot13(va_list);
 

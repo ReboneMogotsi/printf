@@ -21,6 +21,7 @@ int (*get_function(char specifier))(va_list)
 		{'o', print_oct},
 		{'x', print_lowhex},
 		{'X', print_uphex},
+		{'p', print_pointer},
 		{'r', print_rev},
 		{'R', print_rot13},
 		{0, NULL}
