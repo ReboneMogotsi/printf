@@ -15,6 +15,7 @@ int (*get_function(char specifier))(va_list)
 		{'c', print_char},
 		{'i', print_int},
 		{'s', print_string},
+		{'S', print_nonprint},
 		{'b', print_bin},
 		{'u', print_uint},
 		{'o', print_oct},

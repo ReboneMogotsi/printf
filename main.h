@@ -22,6 +22,7 @@ int (*get_function(char specifier))(va_list);
 int count_digits(int num);
 char rot113(char ch);
 int _strlen(char *str);
+int print_nonprint(va_list args);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list);
