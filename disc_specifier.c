@@ -11,7 +11,7 @@ int print_char(va_list args)
 {
 	char ch = va_arg(args, int);
 
-	if(!ch)
+	if (!ch)
 		return (-1);
 
 	return (_putchar(ch));
@@ -80,20 +80,8 @@ int print_int(va_list args)
 	if (!digit)
 		return (-1);
 
-	if (num < INT_MIN || num > INT_MAX)
+	if (num < 0)
 	{
-		_putchar('I');
-		_putchar('n');
-		_putchar('v');
-		_putchar('a');
-		_putchar('l');
-		_putchar('i');
-		_putchar('d');
-		free(digit);
-		return (-1);
-	}
-
-	if (num < 0) {
 		_putchar('-');
 		num = -num;
 	}

@@ -54,9 +54,10 @@ int print_rev(va_list args)
 char rot13(char ch)
 {
 	char rotit, base;
+
 	if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
 	{
-		base = ( ch >= 'A' && ch <= 'Z') ? 'A' : 'a';
+		base = (ch >= 'A' && ch <= 'Z') ? 'A' : 'a';
 		rotit = (ch - base + 13) % 26 + base;
 		return (rotit);
 	}

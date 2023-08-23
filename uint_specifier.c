@@ -27,13 +27,6 @@ int print_uint(va_list args)
 
 	if (num > UINT_MAX)
 	{
-		_putchar('I');
-		_putchar('n');
-		_putchar('v');
-		_putchar('a');
-		_putchar('l');
-		_putchar('i');
-		_putchar('d');
 		free(uint_digit);
 		return (-1);
 	}
